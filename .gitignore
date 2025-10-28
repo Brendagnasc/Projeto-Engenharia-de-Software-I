@@ -1,0 +1,14 @@
+#ignorar binários e objetos 
+/bin/
+/bin/*
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+
+#IDE/editor
+.vscode/
+.idea/
+*~
