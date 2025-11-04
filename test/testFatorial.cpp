@@ -1,11 +1,10 @@
-#include <iostream>
-#include <cassert>
-#include "bib.hpp"
+#include "testFatorial.hpp"
 
-int main() {
+bool testFatorial() {
     assert(fatorial(0) == 1);
     assert(fatorial(1) == 1);
     assert(fatorial(5) == 120);
-    std::cout << "Fatorial: testes OK\n";
-    return 0;
+
+    return true;
 }
+
