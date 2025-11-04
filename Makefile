@@ -1,4 +1,3 @@
-cat > Makefile <<'EOF'
 CXX = g++
 CXXFLAGS = -std=c++17 -Iinclude -Wall -Wextra -g
 SRC_DIR = src
@@ -29,7 +28,7 @@ $(TARGET): $(OBJS)
 $(OBJ_DIR)/%_test.o: $(TEST_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(TEST_TARGET): $(TEST_OBJS) $(OBJS)
+$(TEST_TARGET): $(TEST_OBJS) $(filter-out $(OBJ_DIR)/main.o,$(OBJS))
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 test: dirs $(TEST_TARGET)
